@@ -209,7 +209,11 @@ export default function Managers() {
                                     <Button variant="secondary" onClick={() => setDeleteModal(false)}>
                                         Cancel
                                     </Button>
-                                    <Button variant="danger" onClick={() => handleDelete(managerId)}>
+                                    <Button variant="danger" onClick={() => {
+
+                                        handleDelete(managerId),
+                                        setDeleteModal(false)
+                                    }}>
                                         Delete
                                     </Button>
                                 </Modal.Footer>
