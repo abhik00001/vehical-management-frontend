@@ -39,10 +39,10 @@ export default function VerifyEmail() {
     }
 
     return (
-        <div style={containerStyle} onSubmit={handleSubmit} >
+        <div style={containerStyle}  >
             {
                 loading ? (<div>Loading...</div>) :
-                    (<Form style={passwordForm}>
+                    (<Form style={passwordForm} onSubmit={handleSubmit}>
                         <h2 style={{ textAlign: "center", color: "#333333", }}>Set Password </h2>
                         <hr />
                         <Form.Group className="mb-3" controlId="formBasicPassword">
