@@ -104,8 +104,34 @@ export default function Managers() {
             manager.last_name.toLowerCase().includes(search.toLowerCase())
         ) && (status === null || manager.is_active === status)
         && (createdby === null || manager.created_by === createdby)
+    ).sort((a, b) => {
+        if (!sortField) return 0;
 
-    )
+        const aVal = a[sortField];
+        const bVal = b[sortField];
+
+        if (typeof aVal === 'string' && typeof bVal === 'string') {
+            return sortOrder === 'asc'
+                ? aVal.localeCompare(bVal)
+                : bVal.localeCompare(aVal);
+        }
+
+        return sortOrder === 'asc'
+            ? aVal - bVal
+            : bVal - aVal;
+    });
+
+
+    const handleSort = (field) => {
+        if (sortField === field) {
+            // Toggle sort order if clicking the same column
+            setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
+        } else {
+            // Set new sort field
+            setSortField(field);
+            setSortOrder('asc');
+        }
+    };
 
 
     const admins = users.filter(user => user.role === 'admin')
@@ -189,10 +215,10 @@ export default function Managers() {
                             <tr>
                                 <th>Sr.No.</th>
                                 <th>Profile Image</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>Date Of Birth</th>
+                                <th onClick={()=>handleSort('first_name')}>First Name</th>
+                                <th onClick={()=>handleSort('last_name')}>Last Name</th>
+                                <th onClick={()=>handleSort('email')}>Email</th>
+                                <th onClick={()=>handleSort('date_of_birth')}>Date Of Birth</th>
                                 <th style={{ textAlign: 'center' }}>Actions</th>
                                 <th>Active/Inactive</th>
                             </tr>
@@ -243,14 +269,13 @@ export default function Managers() {
                                             </td>
                                         </tr>
                                     )
-                                })
-                                // || <tr><td colSpan="10" style={{ textAlign: 'center' }}>No Data Found</td></tr>
+                                }) || <tr><td colSpan="10" style={{ textAlign: 'center' }}>No Data Found</td></tr>
 
                             }
-                            {
+                            {/* {
 
                                 (managers.length === 0) && <tr><td colSpan="10" style={{ textAlign: 'center' }}>No Data Found</td></tr>
-                            }
+                            } */}
 
 
                         </tbody>
