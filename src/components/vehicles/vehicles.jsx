@@ -147,7 +147,7 @@ export default function Vehicle() {
             : bVal - aVal;
     });
 
-    
+
     const handleSort = (field) => {
         if (sortField === field) {
             // Toggle sort order if clicking the same column
@@ -158,7 +158,7 @@ export default function Vehicle() {
             setSortOrder('asc');
         }
     };
-    
+
     const allusers = users.filter(user => user.role === 'admin' || user.role === 'manager')
     const handleEdit = (id) => {
         navigate(`/home/vehicles/${id}`)
@@ -254,7 +254,10 @@ export default function Vehicle() {
                         <Button variant="secondary" onClick={() => setDeleteModal(false)}>
                             Cancel
                         </Button>
-                        <Button variant="danger" onClick={() => handleDelete(vehicleId)}>
+                        <Button variant="danger" onClick={() => {
+                            handleDelete(vehicleId)
+                            setDeleteModal(false)
+                        }}>
                             Delete
                         </Button>
                     </Modal.Footer>
@@ -314,10 +317,10 @@ export default function Vehicle() {
 
                             }
 
-                            {
+                            {/* {
 
                                 (vehicles.length === 0) && <tr><td colSpan="11" style={{ textAlign: 'center' }}>No Data Found</td></tr>
-                            }
+                            } */}
 
 
                         </tbody>

@@ -210,8 +210,7 @@ export default function Managers() {
                                         Cancel
                                     </Button>
                                     <Button variant="danger" onClick={() => {
-
-                                        handleDelete(managerId),
+                                        handleDelete(managerId)
                                         setDeleteModal(false)
                                     }}>
                                         Delete
@@ -244,7 +243,8 @@ export default function Managers() {
                                             </td>
                                         </tr>
                                     )
-                                }) || <tr><td colSpan="10" style={{ textAlign: 'center' }}>No Data Found</td></tr>
+                                })
+                                // || <tr><td colSpan="10" style={{ textAlign: 'center' }}>No Data Found</td></tr>
 
                             }
                             {
