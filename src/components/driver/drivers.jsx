@@ -19,8 +19,7 @@ export default function DriversList() {
     const [status, setStatus] = useState(null)
     const [createdby, setCreatedby] = useState(null)
 
-    const [currentPage, setCurrentPage] = useState(1)
-    const itemsPerPage = 4
+
 
     const fetchDrivers = async () => {
         const access = localStorage.getItem('access')
@@ -168,7 +167,11 @@ export default function DriversList() {
     useEffect(() => {
 
     }, [search, createdby,])
+
     // paggination
+    
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 4
     const indexOfLastItem = currentPage * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentItems = fliteredDrivers.slice(indexOfFirstItem, indexOfLastItem)
@@ -249,15 +252,15 @@ export default function DriversList() {
                         <tr>
                             <th>Sr.No.</th>
                             <th >Profile Image</th>
-                            <th onClick={()=>handleSort('first_name')}>First Name</th>
-                            <th onClick={()=>handleSort('last_name')}>Last Name</th>
-                            <th onClick={()=>handleSort('email')}>Email</th>
-                            <th onClick={()=>handleSort('date_of_birth')}>Date Of Birth</th>
-                            <th onClick={()=>handleSort('driver_address')}>Address</th>
-                            <th onClick={()=>handleSort('driver_experience')}>Exp</th>
-                            <th onClick={()=>handleSort('vehicle_assigned')}>Vehicle Assigned</th>
+                            <th onClick={() => handleSort('first_name')}>First Name</th>
+                            <th onClick={() => handleSort('last_name')}>Last Name</th>
+                            <th onClick={() => handleSort('email')}>Email</th>
+                            <th onClick={() => handleSort('date_of_birth')}>Date Of Birth</th>
+                            <th onClick={() => handleSort('driver_address')}>Address</th>
+                            <th onClick={() => handleSort('driver_experience')}>Exp</th>
+                            <th onClick={() => handleSort('vehicle_assigned')}>Vehicle Assigned</th>
                             <th style={{ textAlign: 'center' }}>Actions</th>
-                            <th onClick={()=>handleSort('is_active')}>Active/Inactive</th>
+                            <th onClick={() => handleSort('is_active')}>Active/Inactive</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -321,9 +324,9 @@ export default function DriversList() {
                                     )
                                 })) : (<tr><td colSpan="11" style={{ textAlign: 'center' }}>No Data Found</td></tr>)
                         }
-                        {
+                        {/* {
                             (drivers.length === 0) && <tr><td colSpan="11" style={{ textAlign: 'center' }}>No Data Found</td></tr>
-                        }
+                        } */}
 
 
                     </tbody>

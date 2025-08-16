@@ -94,7 +94,8 @@ export default function Managers() {
 
 
     const managers = (users.filter(user => user.role === 'manager'))
-
+    const [sortField, setSortField] = useState(null);
+    const [sortOrder, setSortOrder] = useState('asc');
 
     const filteredManagers = managers.filter(manager =>
         (
@@ -150,6 +151,7 @@ export default function Managers() {
         navigate(`/home/managers/${id}`)
     }
 
+    // Pagination
     const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 4
 
@@ -215,10 +217,10 @@ export default function Managers() {
                             <tr>
                                 <th>Sr.No.</th>
                                 <th>Profile Image</th>
-                                <th onClick={()=>handleSort('first_name')}>First Name</th>
-                                <th onClick={()=>handleSort('last_name')}>Last Name</th>
-                                <th onClick={()=>handleSort('email')}>Email</th>
-                                <th onClick={()=>handleSort('date_of_birth')}>Date Of Birth</th>
+                                <th onClick={() => handleSort('first_name')}>First Name</th>
+                                <th onClick={() => handleSort('last_name')}>Last Name</th>
+                                <th onClick={() => handleSort('email')}>Email</th>
+                                <th onClick={() => handleSort('date_of_birth')}>Date Of Birth</th>
                                 <th style={{ textAlign: 'center' }}>Actions</th>
                                 <th>Active/Inactive</th>
                             </tr>
