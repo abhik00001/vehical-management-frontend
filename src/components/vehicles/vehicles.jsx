@@ -287,7 +287,7 @@ export default function Vehicle() {
                                         return (
                                             <tr key={index}>
                                                 <td>{index + 1}</td>
-                                                <td><img src={myBaseURL + vehicle.vehicle_img} width={90} height={60} /></td>
+                                                <td><img src={"https://vehical-management-backend.onrender.com/" + vehicle.vehicle_img} width={90} height={60} /></td>
                                                 <td>{vehicle.vehicle_type}</td>
                                                 <td>{vehicle.vehicle_name}</td>
                                                 <td>{vehicle.vehicle_model}</td>
