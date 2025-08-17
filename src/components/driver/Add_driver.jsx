@@ -147,6 +147,9 @@ export default function AddDriver() {
                 <Button className='mb-3' variant="primary" type="submit" style={button}>
                     Submit
                 </Button>
+                <Button className='mb-3' variant="danger" type="button" onClick={()=>navigate('/home/drivers')}>
+                    Cancel
+                </Button>
             </Form>
         </div>
     );

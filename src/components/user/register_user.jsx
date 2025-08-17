@@ -143,6 +143,10 @@ export default function RegisterUser() {
                 <Button className='mb-3' variant="primary" type="submit" style={button}>
                     Submit
                 </Button>
+                <Button className='mb-3' variant="danger" type="button" onClick={()=>navigate('/')}>
+                    Cancel
+                </Button>
+               
             </Form>
         </div>
     );
