@@ -74,7 +74,7 @@ export default function Dashboard() {
                                 <span>Vehicle Assigned : {
                                     userData?.driver_profile ?
                                         <div>
-                                            <span style={{ width: '30', height: '90px', margin: '20px 0 0 20px', }} > {userData.driver_profile?.vehicle_img}</span>
+                                            <span style={{ color:"blue", width: '30', height: '90px', margin: '20px 0 0 20px', }} > {userData.driver_profile?.vehicle_img}</span>
                                             <div style={{ width: 'fit-content', display: 'flex', justifyContent: 'space-evenly', margin: '30px', flexWrap: 'wrap' }}>
                                                 <span style={{ padding: '0 0 0 20px' }}>Vehicle Name: {userData?.driver_profile?.vehicle_name}</span>
                                                 <span style={{ padding: '0 0 0 20px' }}>Vehicle Model: {userData?.driver_profile?.vehicle_model}</span>

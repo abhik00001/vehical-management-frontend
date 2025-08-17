@@ -291,7 +291,7 @@ export default function DriversList() {
                                         <tr key={index}>
                                             <td>{index + 1}</td>
                                             {/* <td><img src={myBaseURL + driver.profile_image} width={90} height={60} /></td> */}
-                                            <td><span className="badge badge-info">{driver.profile_image?.split('/').pop()}</span></td>
+                                            <td><span color='blue'>{driver.profile_image?.split('/').pop()}</span></td>
                                             <td style={{ textTransform: 'capitalize' }}>{driver.first_name}</td>
                                             <td style={{ textTransform: 'capitalize' }}>{driver.last_name}</td>
                                             <td>{driver.email}</td>

@@ -252,7 +252,7 @@ export default function Managers() {
                                         <tr key={index}>
                                             <td>{index + 1}</td>
                                             {/* <td><img src={myBaseURL + manager.profile_image} width={90} height={60} /></td> */}
-                                            <td><span className=" badge badge-primary">{manager.profile_image?.split('/').pop()}</span></td>
+                                            <td><span color="blue">{manager.profile_image?.split('/').pop()}</span></td>
                                             <td>{manager.first_name}</td>
                                             <td>{manager.last_name}</td>
                                             <td>{manager.email}</td>
