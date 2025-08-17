@@ -67,7 +67,8 @@ export default function MyProfile() {
                 } */}
                         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly", }}>
                             <div style={detail}>
-                                <span ><img src={`${myBaseURL}${user.profile_image}`} /></span>
+                                {/* <span ><img src={`${myBaseURL}${user.profile_image}`} /></span> */}
+                                <span className="badge badge-primary" >{user.profile_image?.split('/').pop()}</span>
 
                                 <div style={{
                                     display: "flex",
