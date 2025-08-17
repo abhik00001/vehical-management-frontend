@@ -251,7 +251,7 @@ export default function Managers() {
                                     return (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td><img src={manager.profile_image} width={90} height={60} /></td>
+                                            <td><img src={myBaseURL + manager.profile_image} width={90} height={60} /></td>
                                             <td>{manager.first_name}</td>
                                             <td>{manager.last_name}</td>
                                             <td>{manager.email}</td>
