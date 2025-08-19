@@ -21,45 +21,47 @@ import VehicleUpdate from "./components/vehicles/update_vehicles"
 import ManagerUpdate from "./components/manager/updateManager"
 import UpdateDriver from "./components/driver/update_driver"
 import DriverUpdate from "./components/driver/updateUserDetails"
+import TitleUpdate from "./assets/Title"
 
 
 function App() {
- return(
-       <>
-        <BrowserRouter >
-            <Routes>
-                <Route path="/" element={
-                    isAuthenticated() ? <Navigate to="/home" replace /> : <Navigate to="/login_page" replace />
-                } />
-                <Route path="/login_page" element={<LoginPage />} />
-                <Route path="/forgot_password" element={<ForgotPassword />} />
-                <Route path="/reset-password/:uid/:token" element={<ResetPassword />} />
-                <Route path="/verify_email/:email" element={<VerifyEmail />} />
-                <Route path="/home" element={
-                    <ProtectedRoute>
-                        <Header />
-                    </ProtectedRoute>
-                }>
-                    <Route path="" element={<Dashboard/>} />
-                    <Route path="register_user" element={<RegisterUser/>} />
-                    <Route path="vehicles" element={<Vehicle/>} />
-                    <Route path="add_vehicle" element={<AddVehicle/>} />
-                    <Route path="drivers" element={<DriversList/>} />
-                    <Route path="AddDriver/:userEmail" element={<AddDriver/>} />
-                    <Route path="managers" element={<Managers/>} />
-                    <Route path="passwordChange" element={<PasswordChange/>} />
-                    <Route path="myprofile" element={<MyProfile/>} />
-                    <Route path="updateProfile" element={<MyProfileUpdate/>} />
+    return (
+        <>
+            <BrowserRouter >
+                <TitleUpdate />
+                <Routes>
+                    <Route path="/" element={
+                        isAuthenticated() ? <Navigate to="/home" replace /> : <Navigate to="/login_page" replace />
+                    } />
+                    <Route path="/login_page" element={<LoginPage />} />
+                    <Route path="/forgot_password" element={<ForgotPassword />} />
+                    <Route path="/reset-password/:uid/:token" element={<ResetPassword />} />
+                    <Route path="/verify_email/:email" element={<VerifyEmail />} />
+                    <Route path="/home" element={
+                        <ProtectedRoute>
+                            <Header />
+                        </ProtectedRoute>
+                    }>
+                        <Route path="" element={<Dashboard />} />
+                        <Route path="register_user" element={<RegisterUser />} />
+                        <Route path="vehicles" element={<Vehicle />} />
+                        <Route path="add_vehicle" element={<AddVehicle />} />
+                        <Route path="drivers" element={<DriversList />} />
+                        <Route path="AddDriver/:userEmail" element={<AddDriver />} />
+                        <Route path="managers" element={<Managers />} />
+                        <Route path="passwordChange" element={<PasswordChange />} />
+                        <Route path="myprofile" element={<MyProfile />} />
+                        <Route path="updateProfile" element={<MyProfileUpdate />} />
 
-                    <Route path="vehicles/:vehicleId" element={<VehicleUpdate/>} />
-                    <Route path="managers/:managerId" element={<ManagerUpdate/>} />
-                    <Route path="drivers/:driverId" element={<UpdateDriver/>} />
-                    <Route path="drivers/:driverId/updateUser/:userId" element={<DriverUpdate/>} />
-                </Route>
-            </Routes>
-        </BrowserRouter >
-    </>
- )
+                        <Route path="vehicles/:vehicleId" element={<VehicleUpdate />} />
+                        <Route path="managers/:managerId" element={<ManagerUpdate />} />
+                        <Route path="drivers/:driverId" element={<UpdateDriver />} />
+                        <Route path="drivers/:driverId/updateUser/:userId" element={<DriverUpdate />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter >
+        </>
+    )
 }
 
 export default App
