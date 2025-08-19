@@ -6,6 +6,7 @@ import { RefreshAccessToken } from "../../authentication/auth"
 import { useNavigate } from "react-router"
 
 export default function Dashboard() {
+    document.title = "dashboard"
     const navigate = useNavigate()
     const [userData, setUserData] = useState([])
 
