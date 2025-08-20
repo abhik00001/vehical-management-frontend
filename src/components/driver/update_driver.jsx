@@ -94,7 +94,7 @@ export default function UpdateDriver() {
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
 
 
-                    <span color="blue">{userDetail?.profile_image.split('/').pop()}</span>
+                    {/* <span color="blue">{userDetail?.profile_image.split('/').pop()}</span> */}
                     {/* <img style={{ width: "25%" }} src={myBaseURL+userDetail?.profile_image} /> */}
 
 
