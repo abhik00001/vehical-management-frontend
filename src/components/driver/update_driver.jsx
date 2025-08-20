@@ -94,7 +94,8 @@ export default function UpdateDriver() {
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
 
 
-                    <img style={{ width: "25%" }} src={myBaseURL+userDetail?.profile_image} />
+                    <span color="blue">{userDetail?.profile_image.split('/').pop()}</span>
+                    {/* <img style={{ width: "25%" }} src={myBaseURL+userDetail?.profile_image} /> */}
 
 
                     <Form.Group className="mb-3">
@@ -161,7 +162,7 @@ export default function UpdateDriver() {
                 <Button className='mb-3' variant="primary" type="submit" style={button}>
                     Submit
                 </Button>
-                <Button className='mb-3' variant="danger" type="button" onClick={()=>navigate('/home/drivers')}>
+                <Button className='mb-3' variant="danger" type="button" onClick={() => navigate('/home/drivers')}>
                     Cancel
                 </Button>
             </Form>
