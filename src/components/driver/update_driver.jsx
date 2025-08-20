@@ -103,7 +103,7 @@ export default function UpdateDriver() {
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Label style={label}>First Name</Form.Label>
+                        <Form.Label style={label}>Last Name</Form.Label>
                         <Form.Control style={Input} type="text" name='last_name' value={userDetail?.last_name || ''} disabled />
                     </Form.Group>
                     <div style={{ width: '25%', alignItems: 'center', marginTop: "2rem" }}>
